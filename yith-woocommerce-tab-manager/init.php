@@ -3,17 +3,17 @@
  * Plugin Name: YITH WooCommerce Tab Manager
  * Plugin URI: https://yithemes.com/themes/plugins/yith-woocommerce-tab-manager/
  * Description: <code><strong>YITH WooCommerce Tab Manager</strong></code> allows you to add additional tabs in the product page. <a href ="https://yithemes.com">Get more plugins for your e-commerce shop on <strong>YITH</strong></a>
- * Version: 1.39.0
+ * Version: 2.0.0
  * Author: YITH
  * Author URI: https://yithemes.com/
  * Text Domain: yith-woocommerce-tab-manager
  * Domain Path: /languages/
- * WC requires at least: 9.1
- * WC tested up to: 9.3
+ * WC requires at least: 9.2
+ * WC tested up to: 9.5
  *
  * @author YITH <plugins@yithemes.com>
  * @package YITH WooCommerce Tab Manager
- * @version 1.39.0
+ * @version 1.38.0
  */
 
 /*
@@ -44,17 +44,17 @@ if ( ! function_exists( 'is_plugin_active' ) ) {
 }
 
 
-	/**
-	 * Show error message if WooCommerce isn't active.
-	 *
-	 * @since 1.0.0
-	 */
+/**
+ * Show error message if WooCommerce isn't active.
+ *
+ * @since 1.0.0
+ */
 function yith_ywtm_install_woocommerce_admin_notice() {
 	?>
-		<div class="error">
-			<p><?php esc_html_e( 'YITH WooCommerce Tab Manager is enabled but not effective. It requires WooCommerce in order to work.', 'yith-woocommerce-tab-manager' ); ?></p>
-		</div>
-		<?php
+	<div class="error">
+		<p><?php esc_html_e( 'YITH WooCommerce Tab Manager is enabled but not effective. It requires WooCommerce in order to work.', 'yith-woocommerce-tab-manager' ); ?></p>
+	</div>
+	<?php
 }
 
 /**
@@ -64,9 +64,9 @@ function yith_ywtm_install_woocommerce_admin_notice() {
  */
 function yith_ywtm_install_free_admin_notice() {
 	?>
-		<div class="error">
-			<p><?php esc_html_e( 'You can\'t activate the free version of YITH WooCommerce Tab Manager while you are using the premium one.', 'yith-woocommerce-tab-manager' ); ?></p>
-		</div>
+	<div class="error">
+		<p><?php esc_html_e( 'You can\'t activate the free version of YITH WooCommerce Tab Manager while you are using the premium one.', 'yith-woocommerce-tab-manager' ); ?></p>
+	</div>
 	<?php
 }
 
@@ -77,7 +77,7 @@ if ( ! function_exists( 'yith_plugin_registration_hook' ) ) {
 
 
 if ( ! defined( 'YWTM_VERSION' ) ) {
-	define( 'YWTM_VERSION', '1.39.0' );
+	define( 'YWTM_VERSION', '2.0.0' );
 }
 
 if ( ! defined( 'YWTM_FREE_INIT' ) ) {
@@ -112,11 +112,10 @@ if ( ! defined( 'YWTM_SLUG' ) ) {
 	define( 'YWTM_SLUG', 'yith-woocommerce-tab-manager' );
 }
 
-/* Plugin Framework Version Check */
-if ( ! function_exists( 'yit_maybe_plugin_fw_loader' ) && file_exists( YWTM_DIR . 'plugin-fw/init.php' ) ) {
-	require_once YWTM_DIR . 'plugin-fw/init.php';
+// Plugin Framework Loader.
+if ( file_exists( plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php' ) ) {
+	require_once plugin_dir_path( __FILE__ ) . 'plugin-fw/init.php';
 }
-yit_maybe_plugin_fw_loader( YWTM_DIR );
 
 if ( ! function_exists( 'YITH_Tab_Manager_Init' ) ) {
 	/**
@@ -126,18 +125,18 @@ if ( ! function_exists( 'YITH_Tab_Manager_Init' ) ) {
 	 */
 	function YITH_Tab_Manager_Init() { // phpcs:ignore WordPress.NamingConventions.ValidFunctionName
 
-		/* Load YWTM text domain */
-		load_plugin_textdomain( 'yith-woocommerce-tab-manager', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
-
 		// Load required classes and functions.
 
-		require_once YWTM_INC . 'class.yith-woocommerce-tab-manager.php';
-		require_once YWTM_INC . 'class.yith-wctm-admin.php';
-		require_once YWTM_INC . 'class.yith-wctm-frontend.php';
-		require_once YWTM_INC . 'class.yith-wctm-post-type.php';
+		require_once YWTM_INC . 'functions.yith-tab-manager.php';
+		require_once YWTM_INC . 'class-yith-tab-manager-autoloader.php';
+		require_once YWTM_INC . 'class-yith-woocommerce-tab-manager.php';
 
 		global $YIT_Tab_Manager; // phpcs:ignore WordPress.NamingConventions.ValidVariableName
-		$YIT_Tab_Manager = YITH_Tab_Manager(); // phpcs:ignore WordPress.NamingConventions.ValidVariableName
+		$YIT_Tab_Manager = yith_tab_manager(); // phpcs:ignore WordPress.NamingConventions.ValidVariableName
+
+		if ( defined( 'ICL_SITEPRESS_VERSION' ) ) {
+			YITH_Tab_Manager_WPML_Integration::get_instance();
+		}
 	}
 }
 
@@ -160,13 +159,17 @@ if ( ! function_exists( 'yith_tab_manager_install' ) ) {
 			add_action( 'before_woocommerce_init', 'yith_tab_manager_free_add_support_hpos_system' );
 			do_action( 'yith_wc_tabmanager_init' );
 		}
-
 	}
 }
 
 add_action( 'plugins_loaded', 'yith_tab_manager_install', 11 );
 
 if ( ! function_exists( 'yith_tab_manager_free_add_support_hpos_system' ) ) {
+	/**
+	 * Add the HPOS declaration
+	 *
+	 * @return void
+	 */
 	function yith_tab_manager_free_add_support_hpos_system() {
 		if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
 

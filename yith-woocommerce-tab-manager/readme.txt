@@ -3,27 +3,64 @@
 Contributors: yithemes
 Tags: tab, woocommerce, product, custom tab, e-commerce, ecommerce, commerce, global tab, product tab, tab manager, tabs, shop, google map, gallery video, gallery, woocommerce tab, single product, yith, yit, yithemes
 Requires PHP: 7.4
-Requires at least: 6.4
-Tested up to: 6.6
-Stable tag: 1.39.0
+Requires at least: 6.5
+Tested up to: 6.7
+Stable tag: 2.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-The YITH WooCommerce Tab Manager plugin let you add custom tabs in single product page
+Improve your WooCommerce product pages by adding custom tabs and ad hoc content for your customers
 
 == Description ==
+**With our free plugin, you can improve the classic product page** and create custom tabs to add useful content for your customers. You can add a description of your shop, images, FAQs, and more. With more structured product pages and targeted information, you can answer your customers’ doubts and push them to order.
 
-Efficient pages for direct information
+You can disable the default WooCommerce tabs (Description, Additional information, Reviews, etc.), create unlimited tabs to show in all products, and use the built-in editor to insert text, images, and shortcodes. You can also customize the order of the tabs to decide their position on the product page.
 
-Understanding is vital to reassure clients and with YITH WooCommerce Tab Manager you will be able to customize the product pages with all the information you want:
-PDF files to download, virtual maps, video tutorials, additional details, galleries... every kind of content! The best way to offer what users need and persuade them to purchase immediately.
 
-**Main features:**
+**Free version options:**
 
-* Freedom to create infinite tabs containing an editor
-* Options to rename, move and delete the created tabs
+* Create unlimited tabs to show globally across all products
 
-For a more detailed list of options and features of the plugin, please look at the [official documentation](http://yithemes.com/docs-plugins/yith-woocommerce-tab-manager/ "Yith WooCommerce Tab Manager official documentation").
+* Enter and format text using the built-in editor
+
+* Insert images into tabs
+
+* Use shortcodes inside tabs
+
+* Use the drag-and-drop feature to sort tabs
+
+* Disable WooCommerce default tabs
+
+[See how it works in the live demo of the free plugin >](https://plugins.yithemes.com/yith-woocommerce-tab-manager-free/product/yith-backpack/)
+
+**PREMIUM options**
+Want to create advanced and unlimited tabs? Go PREMIUM!
+
+With the premium version of the plugin, you can:
+
+* Create tabs to show only on specific products
+
+* Create tabs to show only on products from specific categories
+
+* Create tabs with image and video galleries
+
+* Create FAQ tabs to answer common customers questions
+
+* Create tabs with a contact form
+
+* Create tabs with downloadable files
+
+* Create tabs with a Google map related to your products
+
+* Add custom icons to identify the tabs
+
+* Override the content of WooCommerce tabs for each product
+
+* Hide tabs on mobile devices (smartphones, tablets, etc.)
+
+* Customize the colors of the elements inside the tabs
+
+[Check the live demo of th premium version >](https://plugins.yithemes.com/yith-woocommerce-tab-manager/product/yith-long-sleeve-sport/)
 
 
 == Screenshots ==
@@ -38,7 +75,7 @@ Once you have installed the plugin, you just need to activate the plugin in orde
 
 = Configuration =
 
-YITH WooCommerce Tab Manager will add a new submenu called "Tab Manager" under "YIT Plugins" menu. Here you are able to configure all the plugin settings.
+YITH WooCommerce Tab Manager will add a new submenu called "Tab Manager" under "YITH Plugins" menu. Here you are able to configure all the plugin settings.
 You can add tabs from the Tab Manager menu.
 
 == Installation ==
@@ -56,7 +93,7 @@ In order to import correctly the plugin strings in the new system, we had to cha
 = Is the plugin compatible with all WordPress themes? =
 
 Compatibility with all themes is impossible, because they are too many, but generally if themes are developed according to WordPress and WooCommerce guidelines, YITH plugins are compatible with them.
-Yet, we can grant compatibility with themes developed by YIThemes, because they are constantly updated and tested with our plugins. Sometimes, especially when new versions are released, it might only require some time for them to be all updated, but you can be sure that they will be tested and will be working in a few days.
+Yet, we can grant compatibility with themes developed by YITH, because they are constantly updated and tested with our plugins. Sometimes, especially when new versions are released, it might only require some time for them to be all updated, but you can be sure that they will be tested and will be working in a few days.
 
 = How can I get support if my WooCommerce plugin is not working? =
 
@@ -72,6 +109,14 @@ If none of the previous listed actions helps you solve the problem, then, submit
 You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/yith-woocommerce-tab-manager)
 
 == Changelog ==
+
+= 2.0.0 - Released on 05 December 2024 =
+* New: Plugin panel restyling
+* New: Tabs sortable from tab list
+* New: Support for WooCommerce 9.5
+* New: Support for WordPress 6.7
+* Update: YITH plugin framework
+* Update: Language file
 
 = 1.39.0 - Released on 17 September 2024 =
 * New: Support for WooCommerce 9.3
