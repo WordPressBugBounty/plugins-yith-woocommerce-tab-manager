@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the YITH WooCommerce Tab Manager package.
 msgid ""
 msgstr ""
-"Project-Id-Version: YITH WooCommerce Tab Manager 2.1.0\n"
+"Project-Id-Version: YITH WooCommerce Tab Manager 2.2.0\n"
 "Report-Msgid-Bugs-To: YITH <plugins@yithemes.com>\n"
-"POT-Creation-Date: 2025-01-20 13:39:28+00:00\n"
+"POT-Creation-Date: 2025-02-25 15:42:51+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -227,13 +227,13 @@ msgstr ""
 msgid "Invalid tab."
 msgstr ""
 
-#: init.php:55
+#: init.php:56
 msgid ""
 "YITH WooCommerce Tab Manager is enabled but not effective. It requires "
 "WooCommerce in order to work."
 msgstr ""
 
-#: init.php:68
+#: init.php:69
 msgid ""
 "You can't activate the free version of YITH WooCommerce Tab Manager while "
 "you are using the premium one."

@@ -3,17 +3,18 @@
  * Plugin Name: YITH WooCommerce Tab Manager
  * Plugin URI: https://yithemes.com/themes/plugins/yith-woocommerce-tab-manager/
  * Description: <code><strong>YITH WooCommerce Tab Manager</strong></code> allows you to add additional tabs in the product page. <a href ="https://yithemes.com">Get more plugins for your e-commerce shop on <strong>YITH</strong></a>
- * Version: 2.1.0
+ * Version: 2.2.0
  * Author: YITH
  * Author URI: https://yithemes.com/
  * Text Domain: yith-woocommerce-tab-manager
  * Domain Path: /languages/
- * WC requires at least: 9.4
- * WC tested up to: 9.6
+ * WC requires at least: 9.5
+ * WC tested up to: 9.7
+ * Requires Plugins: woocommerce
  *
  * @author YITH <plugins@yithemes.com>
  * @package YITH WooCommerce Tab Manager
- * @version 2.1.0
+ * @version 2.2.0
  */
 
 /*
@@ -77,7 +78,7 @@ if ( ! function_exists( 'yith_plugin_registration_hook' ) ) {
 
 
 if ( ! defined( 'YWTM_VERSION' ) ) {
-	define( 'YWTM_VERSION', '2.1.0' );
+	define( 'YWTM_VERSION', '2.2.0' );
 }
 
 if ( ! defined( 'YWTM_FREE_INIT' ) ) {
