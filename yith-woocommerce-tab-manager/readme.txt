@@ -5,7 +5,7 @@ Tags: tab, woocommerce, product, custom tab, e-commerce, ecommerce, commerce, gl
 Requires PHP: 7.4
 Requires at least: 6.6
 Tested up to: 6.8
-Stable tag: 2.4.0
+Stable tag: 2.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -109,6 +109,10 @@ If none of the previous listed actions helps you solve the problem, then, submit
 You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/yith-woocommerce-tab-manager)
 
 == Changelog ==
+
+= 2.5.0 - Released on 09 June 2025 =
+* New: Support for WooCommerce 9.9
+* Update: YITH plugin framework
 
 = 2.4.0 - Released on 22 April 2025 =
 * New: Support for WordPress 6.8
