@@ -3,9 +3,9 @@
 Contributors: yithemes
 Tags: tab, woocommerce, product, custom tab, e-commerce, ecommerce, commerce, global tab, product tab, tab manager, tabs, shop, google map, gallery video, gallery, woocommerce tab, single product, yith, yit, yithemes
 Requires PHP: 7.4
-Requires at least: 6.7
-Tested up to: 6.9
-Stable tag: 2.12.0
+Requires at least: 6.8
+Tested up to: 7.0
+Stable tag: 2.13.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -109,6 +109,11 @@ If none of the previous listed actions helps you solve the problem, then, submit
 You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/yith-woocommerce-tab-manager)
 
 == Changelog ==
+
+= 2.13.0 - Released on 01 April 2026 =
+* New: Support for WooCommerce 10.7
+* New: Support for WordPress 7.0
+* Update: YITH plugin framework
 
 = 2.12.0 - Released on 06 March 2026 =
 * New: Support for WooCommerce 10.6
