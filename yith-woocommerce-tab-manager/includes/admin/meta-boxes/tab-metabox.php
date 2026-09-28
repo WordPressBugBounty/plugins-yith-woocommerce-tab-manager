@@ -47,10 +47,11 @@ $args = array(
 						'std'   => ywtm_get_default_priority(),
 					),
 					'ywtm_text_tab'         => array(
-						'label'    => __( 'Tab content', 'yith-woocommerce-tab-manager' ),
-						'desc'     => __( 'Set the content for this tab.', 'yith-woocommerce-tab-manager' ),
-						'type'     => 'ywtm-modal-editor',
-						'required' => true,
+						'label'                  => __( 'Tab content', 'yith-woocommerce-tab-manager' ),
+						'desc'                   => __( 'Set the content for this tab.', 'yith-woocommerce-tab-manager' ),
+						'type'                   => 'ywtm-modal-editor',
+						'required'               => true,
+						'yith-sanitize-callback' => 'wp_kses_post',
 					),
 					'ywtm_tab_type'         => array(
 						'label' => '',

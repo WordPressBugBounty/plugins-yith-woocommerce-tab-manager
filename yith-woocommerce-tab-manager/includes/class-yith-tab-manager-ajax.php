@@ -35,6 +35,11 @@ if ( ! class_exists( 'YITH_Tab_Manager_Ajax' ) ) {
 
 			if ( isset( $_REQUEST['tab_id'] ) ) {
 				$tab_id = sanitize_text_field( wp_unslash( $_REQUEST['tab_id'] ) );
+
+				if ( ! current_user_can( 'edit_post', $tab_id ) ) {
+					wp_send_json_error();
+				}
+
 				$active = isset( $_REQUEST['enabled'] ) ? sanitize_text_field( wp_unslash( $_REQUEST['enabled'] ) ) : 'no';
 				try {
 					$tab = ywtm_get_tab( $tab_id );
@@ -57,6 +62,13 @@ if ( ! class_exists( 'YITH_Tab_Manager_Ajax' ) ) {
 
 			if ( isset( $_REQUEST['tabs_to_sort'] ) ) {
 				$tabs_to_sort = explode( ',', sanitize_text_field( wp_unslash( $_REQUEST['tabs_to_sort'] ) ) );
+
+				foreach ( $tabs_to_sort as $tab_id ) {
+					if ( ! current_user_can( 'edit_post', $tab_id ) ) {
+						wp_send_json_error();
+					}
+				}
+
 				$old_priority = array();
 
 				foreach ( $tabs_to_sort as $tab_id ) {
